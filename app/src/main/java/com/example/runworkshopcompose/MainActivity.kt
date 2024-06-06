@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.Observer
 import com.example.runworkshopcompose.ui.theme.RunWorkshopComposeTheme
 import com.example.runworkshopcompose.uicompose.MainScreen
 import com.example.runworkshopcompose.uicompose.RequestViewModel
@@ -29,6 +30,11 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
+        /* Aqui si podemos recuperar el contexto
+        requestViewModel.institutoViewModel.observe(this, Observer {
+            actualizamos valores con viewModel
+        })*/
     }
 }
 

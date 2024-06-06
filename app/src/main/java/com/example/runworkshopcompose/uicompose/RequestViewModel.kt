@@ -14,8 +14,12 @@ import javax.inject.Inject
 class RequestViewModel @Inject constructor(private val getInstitutoUseCase: GetInstitutoUseCase) :ViewModel() {
 
     private val _institutoUseCase = MutableLiveData<InstitutoModel>()
-    val instituto:LiveData<InstitutoModel> = _institutoUseCase
+    val institutoViewModel:LiveData<InstitutoModel> = _institutoUseCase
 
+    //Aqui tenemos otra captura de la llamada a db, que tampoco ha sido llamada
+    val resultOne = getInstitutoUseCase
+
+    //Aqui tenemos capturada la llamada a la db en la variable result que no ha sido llamada todavia
     fun requestUseCase() {
         viewModelScope.launch {
             val result = getInstitutoUseCase()
