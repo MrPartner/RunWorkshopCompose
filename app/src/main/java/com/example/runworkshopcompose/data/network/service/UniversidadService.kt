@@ -6,10 +6,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class UniversidadService @Inject constructor(private val api: UniversidadApiClient) {
+class UniversidadService @Inject constructor(private val universidadApiClient: UniversidadApiClient) {
     suspend fun getUniversidad(): List<UniversidadModel> {
         return withContext(Dispatchers.IO) {
-            val response = api.getAllUniversidades()
+            val response = universidadApiClient.getAllUniversidades()
             response.body() ?: emptyList()
         }
     }

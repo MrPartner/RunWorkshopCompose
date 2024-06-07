@@ -2,7 +2,9 @@ package com.example.runworkshopcompose.core.network.di
 
 import android.content.Context
 import androidx.room.Room
+import com.example.runworkshopcompose.data.network.database.entities.ConsultoraDatabase
 import com.example.runworkshopcompose.data.network.database.entities.InstitutoDatabase
+import com.example.runworkshopcompose.data.network.database.entities.UniversidadDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,6 +18,8 @@ import javax.inject.Singleton
 object RoomModule {
 
     private const val INSTITUTO_DATABASE_NAME = "rwinstitutos"
+    private const val CONSULTORA_DATABASE_NAME = "rwconsultoras"
+    private const val UNIVERSIDAD_DATABASE_NAME = "rwuniversidades"
 
     @Singleton
     @Provides
@@ -25,5 +29,23 @@ object RoomModule {
     @Singleton
     @Provides
     fun provideInstitutoDao(db:InstitutoDatabase) = db.getInstitutoDao()
+
+    @Singleton
+    @Provides
+    fun provideRoomConsultora(@ApplicationContext context: Context) =
+        Room.databaseBuilder(context, ConsultoraDatabase::class.java, CONSULTORA_DATABASE_NAME).build()
+
+    @Singleton
+    @Provides
+    fun provideConsultoraDao(db:ConsultoraDatabase) = db.getConsultoraDao()
+
+    @Singleton
+    @Provides
+    fun provideRoomUniversidad(@ApplicationContext context: Context) =
+        Room.databaseBuilder(context, UniversidadDatabase::class.java, UNIVERSIDAD_DATABASE_NAME).build()
+
+    @Singleton
+    @Provides
+    fun provideUniversidadDao(db:UniversidadDatabase) = db.getUniversidadDao()
 }
 //4
