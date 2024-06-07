@@ -18,8 +18,6 @@ class InstitutoService @Inject constructor(private val institutoApiClient: Insti
 
 }
 //4
-
-//suspend fun getInstituto(): List<InstitutoModel> {
-//    return withContext(Dispatchers.IO) {
-//        val response = api.getAllInstitutos()
-//        response.body() ?: emptyList()
+/*Cuando el repositorio decide hacer el llamado por internet, lo hace a traves de esta clase service
+Si en un futuro decidimos cambiar firebase, o retrofit, o los endpoint etc, solo modificamos esta clase,
+porque esta clase es la dedicada a hacer la peticion  a internet*/

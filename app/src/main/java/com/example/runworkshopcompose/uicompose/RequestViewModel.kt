@@ -23,7 +23,7 @@ class RequestViewModel @Inject constructor(private val getInstitutoUseCase: GetI
     //Aqui tenemos capturada la llamada a la db en la variable result que no ha sido llamada todavia
     fun requestUseCase() {
         viewModelScope.launch {
-            val result = getInstitutoUseCase()
+            val result = getInstitutoUseCase
         }
     }
 
