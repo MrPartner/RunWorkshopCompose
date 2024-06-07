@@ -1,8 +1,9 @@
-package com.example.runworkshopcompose.data.network
+package com.example.runworkshopcompose.data.network.repository
 
 import com.example.runworkshopcompose.data.network.database.entities.InstitutoEntity
 import com.example.runworkshopcompose.data.network.database.entities.dao.InstitutoDao
 import com.example.runworkshopcompose.data.network.response.InstitutoModel
+import com.example.runworkshopcompose.data.network.service.InstitutoService
 import com.example.runworkshopcompose.domain.model.Instituto
 import com.example.runworkshopcompose.domain.model.toDomain
 import javax.inject.Inject
@@ -31,5 +32,6 @@ class InstitutoRepository @Inject constructor(
     }
 }
 //5
+//Esta clase se encarga de gestionar si accedemos a network o a database
 
 

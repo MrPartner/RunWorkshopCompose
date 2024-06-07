@@ -1,6 +1,8 @@
 package com.example.runworkshopcompose.core.network.di
 
+import com.example.runworkshopcompose.data.network.ConsultoraApiClient
 import com.example.runworkshopcompose.data.network.InstitutoApiClient
+import com.example.runworkshopcompose.data.network.UniversidadApiClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,6 +29,18 @@ class NetworkModule {
     @Provides
     fun provideInstitutoApiClient(retrofit: Retrofit): InstitutoApiClient {
         return retrofit.create(InstitutoApiClient::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideConsultoraApiClient(retrofit: Retrofit): ConsultoraApiClient {
+        return retrofit.create(ConsultoraApiClient::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideUniversidadApiClient(retrofit: Retrofit): UniversidadApiClient {
+        return retrofit.create(UniversidadApiClient::class.java)
     }
 
 }

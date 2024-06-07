@@ -1,6 +1,6 @@
-package com.example.runworkshopcompose.domain
+package com.example.runworkshopcompose.domain.usecase
 
-import com.example.runworkshopcompose.data.network.InstitutoRepository
+import com.example.runworkshopcompose.data.network.repository.InstitutoRepository
 import com.example.runworkshopcompose.data.network.database.entities.toDatabase
 import com.example.runworkshopcompose.domain.model.Instituto
 import javax.inject.Inject

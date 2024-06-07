@@ -1,5 +1,6 @@
-package com.example.runworkshopcompose.data.network
+package com.example.runworkshopcompose.data.network.service
 
+import com.example.runworkshopcompose.data.network.InstitutoApiClient
 import com.example.runworkshopcompose.data.network.response.InstitutoModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

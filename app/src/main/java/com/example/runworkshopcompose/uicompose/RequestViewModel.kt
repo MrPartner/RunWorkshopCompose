@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.runworkshopcompose.domain.GetInstitutoUseCase
+import com.example.runworkshopcompose.domain.usecase.GetInstitutoUseCase
 import com.example.runworkshopcompose.domain.model.Instituto
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
