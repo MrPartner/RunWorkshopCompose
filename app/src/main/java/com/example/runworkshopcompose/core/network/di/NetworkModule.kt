@@ -9,6 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+//esta clase nos provee Retrofit y solo es usado para Retrofit
 @Module
 @InstallIn(SingletonComponent::class)
 class NetworkModule {
@@ -29,13 +30,4 @@ class NetworkModule {
     }
 
 }
-
-//@Singleton
-//@Provides
-//fun provideRetrofit(): Retrofit {
-//    return Retrofit.Builder()
-//        .baseUrl("http://192.168.1.7:9090/")
-//        .addConverterFactory(GsonConverterFactory.create())
-//        .build()
-//}
 

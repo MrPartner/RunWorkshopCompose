@@ -19,3 +19,4 @@ interface InstitutoDao {
     @Query("DELETE FROM institutos")
     suspend fun deleteAllInstitutos()
 }
+//2

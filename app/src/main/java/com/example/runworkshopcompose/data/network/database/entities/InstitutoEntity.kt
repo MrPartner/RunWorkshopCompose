@@ -18,3 +18,4 @@ data class InstitutoEntity(
     @ColumnInfo(name = "fecha") val fecha: String,
     @ColumnInfo(name = "hora") val hora: String,
 )
+//1
