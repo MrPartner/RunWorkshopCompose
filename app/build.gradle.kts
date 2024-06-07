@@ -79,6 +79,11 @@ dependencies {
     //Retrofit
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
+    //Room
+    implementation(libs.androidx.room.runtime)
+    annotationProcessor(libs.androidx.room.compiler)
+    implementation(libs.room.ktx)
+    testImplementation(libs.androidx.room.testing)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

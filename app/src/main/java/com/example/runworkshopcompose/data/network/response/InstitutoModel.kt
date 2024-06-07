@@ -2,6 +2,7 @@ package com.example.runworkshopcompose.data.network.response
 
 import com.google.gson.annotations.SerializedName
 
+//Este Modelo se usa para Retrofit
 data class InstitutoModel(
     @SerializedName("instituto") val instituto: String,
     @SerializedName("direccion") val direccion: String,
