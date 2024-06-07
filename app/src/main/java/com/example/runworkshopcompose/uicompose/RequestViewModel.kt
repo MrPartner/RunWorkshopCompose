@@ -4,17 +4,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.runworkshopcompose.data.network.response.InstitutoModel
 import com.example.runworkshopcompose.domain.GetInstitutoUseCase
+import com.example.runworkshopcompose.domain.model.Instituto
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class RequestViewModel @Inject constructor(private val getInstitutoUseCase: GetInstitutoUseCase) :ViewModel() {
+class RequestViewModel @Inject constructor(private val getInstitutoUseCase: GetInstitutoUseCase) :
+    ViewModel() {
 
-    private val _institutoUseCase = MutableLiveData<InstitutoModel>()
-    val institutoViewModel:LiveData<InstitutoModel> = _institutoUseCase
+    private val _institutoUseCase = MutableLiveData<Instituto>()
+    val institutoViewModel: LiveData<Instituto> = _institutoUseCase
 
     //Aqui tenemos otra captura de la llamada a db, que tampoco ha sido llamada
     val resultOne = getInstitutoUseCase
