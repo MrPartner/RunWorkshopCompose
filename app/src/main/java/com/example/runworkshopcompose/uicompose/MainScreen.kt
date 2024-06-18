@@ -17,21 +17,6 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun MainScreen(requestViewModel:RequestViewModel) {
 
-    //Aqui tenemos 3 formas de llamar a db institutos
-    requestViewModel.institutoViewModel
-    requestViewModel.resultInstituto
-    requestViewModel.requestInstitutoUseCase()
-
-    requestViewModel.requestUniversidadUseCase()
-    requestViewModel.universidadViewModel
-
-
-
-
-    //Esto es para darme una idea, actualizar el rv con la variable institutoViewModel
-    /* requestViewModel.institutoViewModel.observe(this, Observer {
-        RecyclerViewInstitutos.pintar = List<InstitutoModel>
-    })*/
 
     Column(Modifier.fillMaxSize().background(Color.White).padding(26.dp)){
         Button(onClick = { /*TODO*/ }) {
@@ -47,10 +32,3 @@ fun MainScreen(requestViewModel:RequestViewModel) {
 
 }
 
-//@Preview(showBackground = true)
-//@Composable
-//fun DefaultPreview(){
-//    RunWorkshopComposeTheme{
-//        MainScreen(requestViewModel = )
-//    }
-//}

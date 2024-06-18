@@ -14,7 +14,7 @@ import javax.inject.Singleton
 //esta clase nos provee Retrofit y solo es usado para Retrofit
 @Module
 @InstallIn(SingletonComponent::class)
-class NetworkModule {
+object NetworkModule {
 
     @Singleton
     @Provides
