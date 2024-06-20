@@ -1,0 +1,71 @@
+[33mcommit ad859c87a5d4c21be2bb3faf79b7029a164ef056[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelop[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/develop[m[33m, [m[1;32mmaster[m[33m)[m
+Author: DanielDevs <danielplimpias@gmail.com>
+Date:   Wed Jun 19 20:18:06 2024 -0400
+
+    seguimos buscando solucion rv
+
+[33mcommit fd9df50036a7f6fba945686febf46befafa3b4d9[m
+Author: DanielDevs <danielplimpias@gmail.com>
+Date:   Mon Jun 17 23:13:21 2024 -0400
+
+    seguimos probando rv
+
+[33mcommit 7134f29fc294627388e93f381da616126aa6da3b[m
+Author: DanielDevs <danielplimpias@gmail.com>
+Date:   Fri Jun 7 16:11:41 2024 -0400
+
+    terminado proceso de igualar clases v2
+
+[33mcommit 3a13e484a31b3de1cfa046edde4693431aafed48[m
+Author: DanielDevs <danielplimpias@gmail.com>
+Date:   Fri Jun 7 15:29:09 2024 -0400
+
+    terminamos de igualar clases
+
+[33mcommit d922af03d79e5a0bbf87519ea770a1d6f68b0b78[m
+Author: DanielDevs <danielplimpias@gmail.com>
+Date:   Fri Jun 7 11:36:02 2024 -0400
+
+    igualando las clases
+
+[33mcommit 7b80830526a7fa7d13b0fc3e180a9513699b04cc[m
+Author: DanielDevs <danielplimpias@gmail.com>
+Date:   Fri Jun 7 00:17:43 2024 -0400
+
+    terminamos Room
+
+[33mcommit d3c3dd6f7bec1b8c4da28f168c921eef7992b290[m
+Author: DanielDevs <danielplimpias@gmail.com>
+Date:   Thu Jun 6 22:42:57 2024 -0400
+
+    seguimos configurando Room x2
+
+[33mcommit 058f1b5261714ec654188158687792e428842d3f[m
+Author: DanielDevs <danielplimpias@gmail.com>
+Date:   Thu Jun 6 21:57:33 2024 -0400
+
+    por terminar Room
+
+[33mcommit 364c574181853cc02eed1f424e72c9901bf41aa4[m
+Author: DanielDevs <danielplimpias@gmail.com>
+Date:   Thu Jun 6 21:28:17 2024 -0400
+
+    anhadiendo room
+
+[33mcommit a6cdf2f603aea62f0890e54edcb4eb68ebd978bf[m
+Author: DanielDevs <danielplimpias@gmail.com>
+Date:   Thu Jun 6 19:05:50 2024 -0400
+
+    mejoras en el viewModel
+
+[33mcommit fece458730f867f4036c12a4c7e5ac33fecc9ae5[m
+Author: DanielDevs <danielplimpias@gmail.com>
+Date:   Wed Jun 5 23:32:06 2024 -0400
+
+    trabajando el viewModel
+
+[33mcommit be75b7df4d80d850d83e5f469650805f48439031[m
+Author: DanielDevs <danielplimpias@gmail.com>
+Date:   Wed Jun 5 18:45:47 2024 -0400
+
+    Creamos el proyecto Runworkshop Compose

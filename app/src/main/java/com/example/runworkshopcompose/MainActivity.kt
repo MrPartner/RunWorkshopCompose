@@ -6,7 +6,9 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.Observer
 import com.example.runworkshopcompose.ui.theme.RunWorkshopComposeTheme
@@ -15,7 +17,7 @@ import com.example.runworkshopcompose.uicompose.RecyclerViewInstitutos
 import com.example.runworkshopcompose.uicompose.RequestViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-@Suppress("UNUSED_EXPRESSION")
+
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
@@ -27,7 +29,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             RunWorkshopComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { it
-                    RecyclerViewInstitutos(requestViewModel)
+                    Surface (modifier = Modifier.padding(it)){
+                        RecyclerViewInstitutos()
+                    }
                 }
             }
         }

@@ -11,8 +11,11 @@ import com.example.runworkshopcompose.domain.model.Universidad
 import com.example.runworkshopcompose.domain.usecase.GetConsultorasUseCase
 import com.example.runworkshopcompose.domain.usecase.GetUniversidadesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+
 @HiltViewModel
 class RequestViewModel @Inject constructor(
     private val getInstitutoUseCase: GetInstitutoUseCase,
@@ -30,6 +33,9 @@ class RequestViewModel @Inject constructor(
             val result = getInstitutoUseCase()
         }
     }
+
+    private val _state = MutableStateFlow<Instituto>(Instituto("", "", "", "", "", "", "", ""))
+    val state: StateFlow<Instituto> = _state
 
 
 }
