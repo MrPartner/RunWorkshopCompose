@@ -24,11 +24,13 @@ class RequestViewModel @Inject constructor(
     private val _institutoUseCase = MutableLiveData<Instituto>()
     val institutoViewModel: LiveData<Instituto> = _institutoUseCase
 
-    fun requestInstitutoUseCase() {
+
+    init {
         viewModelScope.launch {
             val result = getInstitutoUseCase()
         }
     }
+
 
 }
 

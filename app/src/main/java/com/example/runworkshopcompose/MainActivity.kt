@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.Observer
 import com.example.runworkshopcompose.ui.theme.RunWorkshopComposeTheme
 import com.example.runworkshopcompose.uicompose.MainScreen
+import com.example.runworkshopcompose.uicompose.RecyclerViewInstitutos
 import com.example.runworkshopcompose.uicompose.RequestViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,7 +27,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             RunWorkshopComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { it
-                    MainScreen(requestViewModel)
+                    RecyclerViewInstitutos(requestViewModel)
                 }
             }
         }
