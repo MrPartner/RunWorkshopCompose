@@ -30,16 +30,13 @@ class MainActivity : ComponentActivity() {
             RunWorkshopComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { it
                     Surface (modifier = Modifier.padding(it)){
-                        RecyclerViewInstitutos()
+                        RecyclerViewInstitutos(requestViewModel)
                     }
                 }
             }
         }
 
-        /* Aqui si podemos recuperar el contexto
-        requestViewModel.institutoViewModel.observe(this, Observer {
-            actualizamos valores con viewModel
-        })*/
+
     }
 }
 

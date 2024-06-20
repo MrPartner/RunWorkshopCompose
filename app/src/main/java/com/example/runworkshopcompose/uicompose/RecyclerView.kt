@@ -7,16 +7,21 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.example.runworkshopcompose.domain.model.Instituto
 
 
 @Composable
-fun RecyclerViewInstitutos() {
+fun RecyclerViewInstitutos(requestViewModel: RequestViewModel) {
+
+    val institutoViewModel by requestViewModel.institutoViewModel.collectAsState()
+
 
     LazyColumn {
-        items(getItemInstituto()){
+        items(institutoViewModel){it
             ItemInstituto(instituto = it)
         }
 
@@ -64,10 +69,6 @@ fun ItemInstituto(instituto: Instituto) {
     }
 }
 
-fun getItemInstituto(): List<Instituto> {
-    return listOf(
-        Instituto("asdasd","dfgdfg","dfgdfg","dfgdfgd","dfgdfg","dfgdfg","asdasd","234")
-    )
-}
+
 
 

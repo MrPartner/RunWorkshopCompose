@@ -30,6 +30,7 @@ class InstitutoRepository @Inject constructor(
     suspend fun clearInstitutos() {
         institutoDao.deleteAllInstitutos()
     }
+
 }
 //5
 //Esta clase se encarga de gestionar si accedemos a network o a database

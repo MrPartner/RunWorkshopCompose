@@ -19,6 +19,7 @@ class GetInstitutoUseCase @Inject constructor(private val repository: InstitutoR
             repository.getAllInstitutosFromDatabase()
         }
     }
+
 }
 //6
 
