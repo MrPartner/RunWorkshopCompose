@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "312044743381",
+    "project_id": "runworkshopfirebase-b4b1b",
+    "storage_bucket": "runworkshopfirebase-b4b1b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312044743381:android:0cba676f8dc59ac7e9105c",
+        "android_client_info": {
+          "package_name": "com.example.runworkshopcompose"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0cgjfQ8ErXluyGoKqHC0ej2uYwAub8Zg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312044743381:android:df4f9a689e5d7ba0e9105c",
+        "android_client_info": {
+          "package_name": "com.example.runworkshopcompose.debug"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0cgjfQ8ErXluyGoKqHC0ej2uYwAub8Zg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

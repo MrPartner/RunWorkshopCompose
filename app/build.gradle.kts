@@ -4,6 +4,9 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
 
+    // Add the Google services Gradle plugin
+    id("com.google.gms.google-services")
+
     //dagger hilt
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
@@ -36,6 +39,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+        debug{
+            applicationIdSuffix = ".debug"
         }
     }
 
@@ -92,6 +98,10 @@ dependencies {
     implementation(libs.room.ktx)
     testImplementation(libs.androidx.room.testing)
     ksp(libs.androidx.room.compiler)
+
+    // Import the Firebase BoM
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
 
 
     testImplementation(libs.junit)
