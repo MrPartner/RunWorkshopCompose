@@ -7,6 +7,9 @@ plugins {
     //dagger hilt
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+
+    //KSP
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -56,6 +59,9 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    kapt {
+        correctErrorTypes; true
+    }
 }
 
 dependencies {
@@ -68,8 +74,6 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-
-
 
     //dagger hilt
     implementation(libs.dagger.hilt.android)
@@ -86,6 +90,7 @@ dependencies {
     annotationProcessor(libs.androidx.room.compiler)
     implementation(libs.room.ktx)
     testImplementation(libs.androidx.room.testing)
+    ksp(libs.androidx.room.compiler)
 
 
     testImplementation(libs.junit)
@@ -96,4 +101,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
+
+
 

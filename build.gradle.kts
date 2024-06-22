@@ -9,4 +9,7 @@ plugins {
     //Dagger Hilt
     id("com.google.dagger.hilt.android") version "2.47" apply false
 
+    //KSP
+    id("com.google.devtools.ksp") version "2.0.0-1.0.22" apply false
+
 }

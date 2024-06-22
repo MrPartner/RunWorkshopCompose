@@ -4,7 +4,7 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.example.runworkshopcompose.data.network.database.entities.dao.UniversidadDao
 
-@Database(entities = [UniversidadEntity::class], version = 1)
+@Database(entities = [UniversidadEntity::class], version = 1, exportSchema = false)
 abstract class UniversidadDatabase : RoomDatabase() {
 
     abstract fun getUniversidadDao(): UniversidadDao

@@ -29,9 +29,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             RunWorkshopComposeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { it
-                    Surface (modifier = Modifier.padding(it)){
+                    
                         RecyclerViewInstitutos(requestViewModel)
-                    }
+
                 }
             }
         }
