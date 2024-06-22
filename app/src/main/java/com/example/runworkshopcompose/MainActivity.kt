@@ -5,16 +5,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
-import androidx.compose.ui.Modifier
-import androidx.lifecycle.Observer
 import com.example.runworkshopcompose.ui.theme.RunWorkshopComposeTheme
-import com.example.runworkshopcompose.uicompose.MainScreen
-import com.example.runworkshopcompose.uicompose.RecyclerViewInstitutos
 import com.example.runworkshopcompose.uicompose.RequestViewModel
+import com.example.runworkshopcompose.uicompose.lazycolumns.LazyColumnConsultoras
+import com.example.runworkshopcompose.uicompose.lazycolumns.LazyColumnInstitutos
+import com.example.runworkshopcompose.uicompose.lazycolumns.LazyColumnUniversidades
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -29,7 +24,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             RunWorkshopComposeTheme {
-                        RecyclerViewInstitutos(requestViewModel)
+                LazyColumnConsultoras(requestViewModel)
             }
         }
 

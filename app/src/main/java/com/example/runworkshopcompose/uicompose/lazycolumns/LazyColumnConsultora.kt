@@ -1,4 +1,4 @@
-package com.example.runworkshopcompose.uicompose
+package com.example.runworkshopcompose.uicompose.lazycolumns
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,20 +11,19 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.runworkshopcompose.domain.model.Instituto
-
+import com.example.runworkshopcompose.domain.model.Consultora
+import com.example.runworkshopcompose.uicompose.RequestViewModel
 
 @Composable
-fun RecyclerViewInstitutos(requestViewModel: RequestViewModel) {
+fun LazyColumnConsultoras(requestViewModel: RequestViewModel) {
 
-//    val institutoViewModel by requestViewModel.institutoViewModel.collectAsState()
-    val institutoViewModel by requestViewModel.institutoViewModel.collectAsStateWithLifecycle()
+
+    val consultoraViewModel by requestViewModel.consultoraViewModel.collectAsStateWithLifecycle()
 
     Scaffold() {
         LazyColumn(
@@ -33,8 +32,8 @@ fun RecyclerViewInstitutos(requestViewModel: RequestViewModel) {
                 .fillMaxSize(),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            items(institutoViewModel) { insituto ->
-                ItemInstituto(instituto = insituto)
+            items(consultoraViewModel) { consultora ->
+                ItemConsultora(consultora = consultora)
             }
         }
     }
@@ -42,45 +41,41 @@ fun RecyclerViewInstitutos(requestViewModel: RequestViewModel) {
 
 
 @Composable
-fun ItemInstituto(instituto: Instituto) {
+fun ItemConsultora(consultora: Consultora) {
     Card(modifier = Modifier.fillMaxWidth()) {
         Column {
             Text(
-                text = instituto.instituto,
+                text = consultora.consultora,
                 modifier = Modifier.align(Alignment.Start)
             )
             Text(
-                text = instituto.direccion,
+                text = consultora.direccion,
                 modifier = Modifier.align(Alignment.Start)
             )
             Text(
-                text = instituto.audiencia,
+                text = consultora.audiencia,
                 modifier = Modifier.align(Alignment.Start)
             )
             Text(
-                text = instituto.taller,
+                text = consultora.taller,
                 modifier = Modifier.align(Alignment.Start)
             )
             Text(
-                text = instituto.descripcion,
+                text = consultora.descripcion,
                 modifier = Modifier.align(Alignment.Start)
             )
             Text(
-                text = instituto.costo,
+                text = consultora.costo,
                 modifier = Modifier.align(Alignment.Start)
             )
             Text(
-                text = instituto.fecha,
+                text = consultora.fecha,
                 modifier = Modifier.align(Alignment.Start)
             )
             Text(
-                text = instituto.hora,
+                text = consultora.hora,
                 modifier = Modifier.align(Alignment.Start)
             )
         }
     }
 }
-
-
-
-
