@@ -8,6 +8,7 @@ import com.example.runworkshopcompose.domain.model.Instituto
 import com.example.runworkshopcompose.domain.usecase.GetConsultorasUseCase
 import com.example.runworkshopcompose.domain.usecase.GetUniversidadesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -26,19 +27,22 @@ class RequestViewModel @Inject constructor(
 
 
     init {
-        viewModelScope.launch {
-            fetchData()
+        fetchData()
+    }
+
+    private fun fetchData() {
+        viewModelScope.launch(Dispatchers.IO) {
+            _institutoUseCase.value = getInstitutoUseCase()
         }
     }
 
-    private suspend fun fetchData() {
-        _institutoUseCase.value = getInstitutoUseCase.invoke()
 
-    }
 }
 
 
-
+//viewModelScope.launch {
+//    fetchData()
+//}
 
 
 

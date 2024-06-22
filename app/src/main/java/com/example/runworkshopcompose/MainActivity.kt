@@ -18,6 +18,7 @@ import com.example.runworkshopcompose.uicompose.RequestViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
+
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
@@ -28,11 +29,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             RunWorkshopComposeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { it
-                    
                         RecyclerViewInstitutos(requestViewModel)
-
-                }
             }
         }
 
