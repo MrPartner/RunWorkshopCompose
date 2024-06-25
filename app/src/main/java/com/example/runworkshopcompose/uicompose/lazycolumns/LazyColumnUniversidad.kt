@@ -56,7 +56,7 @@ fun ItemUniversidad(universidad: Universidad) {
         colors = CardDefaults.cardColors(Color(0xFFFFFFFF), contentColor = Color.Black)
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
-            Row(modifier = Modifier, verticalAlignment = Alignment.CenterVertically) {
+            Row{
                 Text(
                     text = "Universidad: ",
                     modifier = Modifier,
@@ -64,7 +64,7 @@ fun ItemUniversidad(universidad: Universidad) {
                 )
                 Text(text = universidad.universidad)
             }
-            Row(modifier = Modifier, verticalAlignment = Alignment.CenterVertically) {
+            Row{
                 Text(
                     text = "Direccion: ",
                     modifier = Modifier,
@@ -72,7 +72,7 @@ fun ItemUniversidad(universidad: Universidad) {
                 )
                 Text(text = universidad.direccion)
             }
-            Row(modifier = Modifier, verticalAlignment = Alignment.CenterVertically) {
+            Row{
                 Text(
                     text = "Audiencia: ",
                     modifier = Modifier,
@@ -80,7 +80,7 @@ fun ItemUniversidad(universidad: Universidad) {
                 )
                 Text(text = universidad.audiencia)
             }
-            Row(modifier = Modifier, verticalAlignment = Alignment.CenterVertically) {
+            Row{
                 Text(
                     text = "Taller: ",
                     modifier = Modifier,
@@ -90,7 +90,7 @@ fun ItemUniversidad(universidad: Universidad) {
                     text = universidad.taller
                 )
             }
-            Row(modifier = Modifier, verticalAlignment = Alignment.CenterVertically) {
+            Row{
                 Text(
                     text = "Descripcion: ",
                     modifier = Modifier,
@@ -100,7 +100,7 @@ fun ItemUniversidad(universidad: Universidad) {
                     text = universidad.descripcion
                 )
             }
-            Row(modifier = Modifier, verticalAlignment = Alignment.CenterVertically) {
+            Row{
                 Text(
                     text = "Costo: ",
                     modifier = Modifier,
