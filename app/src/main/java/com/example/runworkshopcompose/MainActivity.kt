@@ -5,6 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.runworkshopcompose.ui.theme.RunWorkshopComposeTheme
 import com.example.runworkshopcompose.uicompose.RequestViewModel
 import com.example.runworkshopcompose.uicompose.lazycolumns.LazyColumnConsultoras
@@ -24,7 +26,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             RunWorkshopComposeTheme {
-                LazyColumnConsultoras(requestViewModel)
+                LazyColumnUniversidades(requestViewModel)
             }
         }
 
