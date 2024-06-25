@@ -27,8 +27,7 @@ import com.example.runworkshopcompose.uicompose.RequestViewModel
 
 
 @Composable
-fun LazyColumnInstitutos(requestViewModel: RequestViewModel) {
-
+fun LazyColumnInstitutos(requestViewModel: RequestViewModel){
 
     val institutoViewModel by requestViewModel.institutoViewModel.collectAsStateWithLifecycle()
 
@@ -39,8 +38,8 @@ fun LazyColumnInstitutos(requestViewModel: RequestViewModel) {
                 .fillMaxSize(),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            items(institutoViewModel) { insituto ->
-                ItemInstituto(instituto = insituto)
+            items(institutoViewModel) { instituto ->
+                ItemInstituto(instituto = instituto)
             }
         }
     }
