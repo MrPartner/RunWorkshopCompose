@@ -9,38 +9,51 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.runworkshopcompose.domain.model.Consultora
 import com.example.runworkshopcompose.domain.model.Instituto
+import com.example.runworkshopcompose.uicompose.MainScreen
 import com.example.runworkshopcompose.uicompose.RequestViewModel
 
 
 @Composable
-fun LazyColumnInstitutos(requestViewModel: RequestViewModel){
+fun LazyColumnInstitutos(requestViewModel: RequestViewModel) {
 
     val institutoViewModel by requestViewModel.institutoViewModel.collectAsStateWithLifecycle()
+    var showMainScreen by rememberSaveable { mutableStateOf(false) }
 
-    Scaffold(modifier = Modifier, containerColor = Color(0x802A49F3)) {
-        LazyColumn(
-            modifier = Modifier
-                .padding(it)
-                .fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
-            items(institutoViewModel) { instituto ->
-                ItemInstituto(instituto = instituto)
+    Scaffold(modifier = Modifier, containerColor = Color(0x802A49F3)) {innerPadding ->
+        Column(modifier = Modifier.padding(innerPadding)) {
+            Button(onClick = {
+                showMainScreen = true
+            }) {
+                Text(text = "Back")
             }
+            LazyColumn(
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                items(institutoViewModel) { instituto ->
+                    ItemInstituto(instituto = instituto)
+                }
+            }
+        }
+        if (showMainScreen) {
+            MainScreen(requestViewModel)
         }
     }
 }
@@ -56,7 +69,7 @@ fun ItemInstituto(instituto: Instituto) {
         colors = CardDefaults.cardColors(Color(0xFFFFFFFF), contentColor = Color.Black)
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
-            Row{
+            Row {
                 Text(
                     text = "Instituto: ",
                     modifier = Modifier,
@@ -64,7 +77,7 @@ fun ItemInstituto(instituto: Instituto) {
                 )
                 Text(text = instituto.instituto)
             }
-            Row{
+            Row {
                 Text(
                     text = "Direccion: ",
                     modifier = Modifier,
@@ -72,7 +85,7 @@ fun ItemInstituto(instituto: Instituto) {
                 )
                 Text(text = instituto.direccion)
             }
-            Row{
+            Row {
                 Text(
                     text = "Audiencia: ",
                     modifier = Modifier,
@@ -80,7 +93,7 @@ fun ItemInstituto(instituto: Instituto) {
                 )
                 Text(text = instituto.audiencia)
             }
-            Row{
+            Row {
                 Text(
                     text = "Taller: ",
                     modifier = Modifier,
@@ -90,7 +103,7 @@ fun ItemInstituto(instituto: Instituto) {
                     text = instituto.taller
                 )
             }
-            Row{
+            Row {
                 Text(
                     text = "Descripcion: ",
                     modifier = Modifier,
@@ -100,7 +113,7 @@ fun ItemInstituto(instituto: Instituto) {
                     text = instituto.descripcion
                 )
             }
-            Row{
+            Row {
                 Text(
                     text = "Costo: ",
                     modifier = Modifier,
