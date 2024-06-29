@@ -1,6 +1,7 @@
 package com.example.runworkshopcompose.uicompose.lazycolumns
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,9 +19,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.runworkshopcompose.R
 import com.example.runworkshopcompose.domain.model.Consultora
 import com.example.runworkshopcompose.domain.model.Universidad
 import com.example.runworkshopcompose.uicompose.RequestViewModel
@@ -29,10 +32,10 @@ import com.example.runworkshopcompose.uicompose.RequestViewModel
 fun LazyColumnUniversidades(universidades: List<Universidad>, onBackClick: () -> Unit) {
 
     Column(modifier = Modifier) {
-        Button(modifier = Modifier.padding(8.dp), onClick = {
+        Button(modifier = Modifier.padding(horizontal = 8.dp), onClick = {
             onBackClick()
         }) {
-            Text(text = "Back")
+            Image(painter = painterResource(id = R.drawable.ic_back), contentDescription = "volver")
         }
         LazyColumn(
             modifier = Modifier.fillMaxSize(),

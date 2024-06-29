@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -83,7 +82,7 @@ fun MyCardInstitutos(
         Text(
             text = "Institutos",
             modifier = Modifier
-                .padding(16.dp)
+                .padding(8.dp)
                 .align(Alignment.CenterHorizontally), fontSize = 22.sp, fontWeight = FontWeight.Bold
         )
         if (showLazyColumnInstitutos) {
@@ -111,7 +110,7 @@ fun MyCardUniversidades(
         Text(
             text = "Universidades",
             modifier = Modifier
-                .padding(16.dp)
+                .padding(8.dp)
                 .align(Alignment.CenterHorizontally), fontSize = 22.sp, fontWeight = FontWeight.Bold
         )
         if (showLazyColumnUniversidades) {
@@ -139,7 +138,7 @@ fun MyCardConsultoras(
         Text(
             text = "Consultoras",
             modifier = Modifier
-                .padding(16.dp)
+                .padding(8.dp)
                 .align(Alignment.CenterHorizontally), fontSize = 22.sp, fontWeight = FontWeight.Bold
         )
         if (showLazyColumnConsultoras) {
