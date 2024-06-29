@@ -9,36 +9,32 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.runworkshopcompose.domain.model.Consultora
-import com.example.runworkshopcompose.uicompose.RequestViewModel
 
-@Preview(showBackground = true, showSystemUi = true)
+
 @Composable
-fun LazyColumnConsultoras(requestViewModel: RequestViewModel) {
+fun LazyColumnConsultoras(consultoras: List<Consultora>, onBackClick: () -> Unit) {
 
-
-    val consultoraViewModel by requestViewModel.consultoras.collectAsStateWithLifecycle()
-
-    Scaffold(modifier = Modifier, containerColor = Color(0x802A49F3)) {
+    Column(modifier = Modifier) {
+        Button(modifier = Modifier.padding(8.dp), onClick = {
+            onBackClick()
+        }) {
+            Text(text = "Back")
+        }
         LazyColumn(
-            modifier = Modifier
-                .padding(it)
-                .fillMaxSize(),
+            modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            items(consultoraViewModel) { consultora ->
+            items(consultoras) { consultora ->
                 ItemConsultora(consultora = consultora)
             }
         }
@@ -56,7 +52,7 @@ fun ItemConsultora(consultora: Consultora) {
         colors = CardDefaults.cardColors(Color(0xFFFFFFFF), contentColor = Color.Black)
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
-            Row{
+            Row {
                 Text(
                     text = "Consultora: ",
                     modifier = Modifier,
@@ -64,7 +60,7 @@ fun ItemConsultora(consultora: Consultora) {
                 )
                 Text(text = consultora.consultora)
             }
-            Row{
+            Row {
                 Text(
                     text = "Direccion: ",
                     modifier = Modifier,
@@ -72,7 +68,7 @@ fun ItemConsultora(consultora: Consultora) {
                 )
                 Text(text = consultora.direccion)
             }
-            Row{
+            Row {
                 Text(
                     text = "Audiencia: ",
                     modifier = Modifier,
@@ -80,7 +76,7 @@ fun ItemConsultora(consultora: Consultora) {
                 )
                 Text(text = consultora.audiencia)
             }
-            Row{
+            Row {
                 Text(
                     text = "Taller: ",
                     modifier = Modifier,
@@ -90,7 +86,7 @@ fun ItemConsultora(consultora: Consultora) {
                     text = consultora.taller
                 )
             }
-            Row{
+            Row {
                 Text(
                     text = "Descripcion: ",
                     modifier = Modifier,
@@ -100,7 +96,7 @@ fun ItemConsultora(consultora: Consultora) {
                     text = consultora.descripcion
                 )
             }
-            Row{
+            Row {
                 Text(
                     text = "Costo: ",
                     modifier = Modifier,

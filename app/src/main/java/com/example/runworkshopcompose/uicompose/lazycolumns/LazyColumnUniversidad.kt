@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Scaffold
@@ -20,23 +21,24 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.runworkshopcompose.domain.model.Consultora
 import com.example.runworkshopcompose.domain.model.Universidad
 import com.example.runworkshopcompose.uicompose.RequestViewModel
 
 @Composable
-fun LazyColumnUniversidades(requestViewModel: RequestViewModel) {
+fun LazyColumnUniversidades(universidades: List<Universidad>, onBackClick: () -> Unit) {
 
-
-    val universidadViewModel by requestViewModel.universidades.collectAsStateWithLifecycle()
-
-    Scaffold(modifier = Modifier, containerColor = Color(0x802A49F3)) {
+    Column(modifier = Modifier) {
+        Button(modifier = Modifier.padding(8.dp), onClick = {
+            onBackClick()
+        }) {
+            Text(text = "Back")
+        }
         LazyColumn(
-            modifier = Modifier
-                .padding(it)
-                .fillMaxSize(),
+            modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            items(universidadViewModel) { universidad ->
+            items(universidades) { universidad ->
                 ItemUniversidad(universidad = universidad)
             }
         }

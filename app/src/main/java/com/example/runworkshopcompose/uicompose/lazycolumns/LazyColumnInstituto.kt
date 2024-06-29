@@ -25,7 +25,7 @@ import com.example.runworkshopcompose.domain.model.Instituto
 fun LazyColumnInstitutos(institutos: List<Instituto>, onBackClick: () -> Unit) {
 
     Column(modifier = Modifier) {
-        Button(onClick = {
+        Button( modifier = Modifier.padding(8.dp),onClick = {
             onBackClick()
         }) {
             Text(text = "Back")
@@ -38,7 +38,6 @@ fun LazyColumnInstitutos(institutos: List<Instituto>, onBackClick: () -> Unit) {
                 ItemInstituto(instituto = instituto)
             }
         }
-
     }
 }
 
