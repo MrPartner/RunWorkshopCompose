@@ -86,6 +86,7 @@ dependencies {
     //dagger hilt
     implementation(libs.dagger.hilt.android)
     kapt(libs.hilt.android.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
     //ViewModel
     implementation (libs.androidx.lifecycle.viewmodel.ktx)
     //LiveData

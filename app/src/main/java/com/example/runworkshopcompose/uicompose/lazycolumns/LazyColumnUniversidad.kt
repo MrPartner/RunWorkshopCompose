@@ -15,13 +15,11 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.runworkshopcompose.domain.model.Instituto
 import com.example.runworkshopcompose.domain.model.Universidad
 import com.example.runworkshopcompose.uicompose.RequestViewModel
 
@@ -29,7 +27,7 @@ import com.example.runworkshopcompose.uicompose.RequestViewModel
 fun LazyColumnUniversidades(requestViewModel: RequestViewModel) {
 
 
-    val universidadViewModel by requestViewModel.universidadViewModel.collectAsStateWithLifecycle()
+    val universidadViewModel by requestViewModel.universidades.collectAsStateWithLifecycle()
 
     Scaffold(modifier = Modifier, containerColor = Color(0x802A49F3)) {
         LazyColumn(

@@ -24,33 +24,43 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.runworkshopcompose.domain.model.Instituto
 import com.example.runworkshopcompose.ui.theme.Purple80
 import com.example.runworkshopcompose.uicompose.lazycolumns.LazyColumnInstitutos
 
+
 @Composable
-fun MainScreen(requestViewModel: RequestViewModel) {
-    Scaffold(modifier = Modifier) {
+fun MainScreen(requestViewModel: RequestViewModel = hiltViewModel()) {
+
+    val institutos by requestViewModel.institutos.collectAsStateWithLifecycle()
+
+
+    Scaffold(modifier = Modifier) { padding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color.White)
-                .padding(paddingValues = it)
-        ) {
-            MyCard(requestViewModel) { LazyColumnInstitutos(it) }
-            Button(onClick = { /*TODO*/ }) {
-                Text(text = "Universidades")
+                .padding(paddingValues = padding),
+            content = {
+                MyCard(
+                    institutos = institutos,
+                )
+                Button(onClick = { /*TODO*/ }) {
+                    Text(text = "Universidades")
+                }
+                Button(onClick = { /*TODO*/ }) {
+                    Text(text = "Consultoras")
+                }
             }
-            Button(onClick = { /*TODO*/ }) {
-                Text(text = "Consultoras")
-            }
-        }
+        )
     }
 }
 
 @Composable
 fun MyCard(
-    requestViewModel: RequestViewModel,
-    LazyColumnInstitutos: @Composable (RequestViewModel) -> Unit
+    institutos: List<Instituto>
 ) {
     var showLazyColumn by rememberSaveable { mutableStateOf(false) }
     Card(
@@ -70,9 +80,9 @@ fun MyCard(
                 .padding(16.dp)
                 .align(Alignment.CenterHorizontally), fontSize = 22.sp, fontWeight = FontWeight.Bold
         )
-    }
-    if (showLazyColumn){
-        LazyColumnInstitutos(requestViewModel)
+        if (showLazyColumn) {
+            LazyColumnInstitutos(institutos) {showLazyColumn = false}
+        }
     }
 }
 

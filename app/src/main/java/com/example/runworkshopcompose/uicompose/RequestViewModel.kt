@@ -24,14 +24,14 @@ class RequestViewModel @Inject constructor(
 ) :
     ViewModel() {
 
-    private val _institutoUseCase = MutableStateFlow<List<Instituto>>(emptyList())
-    val institutoViewModel: StateFlow<List<Instituto>> = _institutoUseCase
+    private val _institutos = MutableStateFlow<List<Instituto>>(emptyList())
+    val institutos: StateFlow<List<Instituto>> = _institutos
 
-    private val _universidadesUseCase = MutableStateFlow<List<Universidad>>(emptyList())
-    val universidadViewModel: StateFlow<List<Universidad>> = _universidadesUseCase
+    private val _universidades = MutableStateFlow<List<Universidad>>(emptyList())
+    val universidades: StateFlow<List<Universidad>> = _universidades
 
-    private val _consultorasUseCase = MutableStateFlow<List<Consultora>>(emptyList())
-    val consultoraViewModel: StateFlow<List<Consultora>> = _consultorasUseCase
+    private val _consultoras = MutableStateFlow<List<Consultora>>(emptyList())
+    val consultoras: StateFlow<List<Consultora>> = _consultoras
 
     init {
         fetchData()
@@ -39,9 +39,9 @@ class RequestViewModel @Inject constructor(
 
     private fun fetchData() {
         viewModelScope.launch(Dispatchers.IO) {
-            _institutoUseCase.value = getInstitutoUseCase()
-            _universidadesUseCase.value = getUniversidadUseCase()
-            _consultorasUseCase.value = getConsultorasUseCase()
+            _institutos.value = getInstitutoUseCase()
+            _universidades.value = getUniversidadUseCase()
+            _consultoras.value = getConsultorasUseCase()
         }
     }
 

@@ -18,6 +18,7 @@ retrofit = "2.9.0"
 roomKtx = "2.6.1"
 roomRuntime = "2.6.1"
 roomTesting = "2.6.1"
+hiltNavigationCompose = "1.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -47,6 +48,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
