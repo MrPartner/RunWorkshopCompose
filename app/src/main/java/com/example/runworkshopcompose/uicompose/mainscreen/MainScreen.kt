@@ -1,4 +1,4 @@
-package com.example.runworkshopcompose.uicompose
+package com.example.runworkshopcompose.uicompose.mainscreen
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -28,7 +28,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.runworkshopcompose.domain.model.Consultora
 import com.example.runworkshopcompose.domain.model.Instituto
 import com.example.runworkshopcompose.domain.model.Universidad
-import com.example.runworkshopcompose.ui.theme.Purple80
+import com.example.runworkshopcompose.uicompose.theme.Purple80
 import com.example.runworkshopcompose.uicompose.lazycolumns.LazyColumnConsultoras
 import com.example.runworkshopcompose.uicompose.lazycolumns.LazyColumnInstitutos
 import com.example.runworkshopcompose.uicompose.lazycolumns.LazyColumnUniversidades

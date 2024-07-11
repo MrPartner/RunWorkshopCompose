@@ -1,4 +1,4 @@
-package com.example.runworkshopcompose.uicompose
+package com.example.runworkshopcompose.uicompose.mainscreen
 
 
 import androidx.lifecycle.ViewModel

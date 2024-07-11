@@ -1,4 +1,4 @@
-package com.example.runworkshopcompose.ui.theme
+package com.example.runworkshopcompose.uicompose.theme
 
 import android.app.Activity
 import android.os.Build

@@ -13,20 +13,15 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.runworkshopcompose.R
-import com.example.runworkshopcompose.domain.model.Consultora
 import com.example.runworkshopcompose.domain.model.Universidad
-import com.example.runworkshopcompose.uicompose.RequestViewModel
 
 @Composable
 fun LazyColumnUniversidades(universidades: List<Universidad>, onBackClick: () -> Unit) {
