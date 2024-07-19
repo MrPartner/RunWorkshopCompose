@@ -13,7 +13,7 @@ import com.example.runworkshopcompose.uicompose.signup.SignUpScreen
 
 @Composable
 fun ContentWrapper(navigationController: NavHostController) {
-    NavHost(navController = navigationController, startDestination = SplashScreen.route) {
+    NavHost(navController = navigationController, startDestination = LoginScreen.route) {
         composable(SplashScreen.route) {
             SplashScreen(navigateToLoginScreen = {navigationController.navigate(LoginScreen.route)})
         }

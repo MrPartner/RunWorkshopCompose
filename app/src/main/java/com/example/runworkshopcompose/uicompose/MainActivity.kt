@@ -8,6 +8,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.runworkshopcompose.uicompose.theme.RunWorkshopComposeTheme
 import com.example.runworkshopcompose.uicompose.core.ContentWrapper
+import com.example.runworkshopcompose.uicompose.login.LoginScreen
+
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,8 +22,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             RunWorkshopComposeTheme {
-                navigationController = rememberNavController()
-                ContentWrapper(navigationController)
+//                navigationController = rememberNavController()
+//                ContentWrapper(navigationController)
+                LoginScreen()
             }
         }
 

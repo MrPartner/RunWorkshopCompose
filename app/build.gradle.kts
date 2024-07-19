@@ -95,6 +95,8 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
     //ViewModel
     implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+
     //LiveData
     implementation (libs.lifecycle.livedata.ktx)
     //Retrofit
