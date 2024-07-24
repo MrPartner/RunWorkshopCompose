@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
@@ -28,6 +29,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
@@ -147,15 +149,28 @@ fun SocialLogin() {
         Image(
             painter = painterResource(id = R.drawable.fb),
             contentDescription = "social login fb",
+            modifier = Modifier.size(20.dp)
+        )
+        TextButton(onClick = { /*TODO*/ }) {
+            Text(
+                text = "Facebook", fontSize = 14.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color(0xFF4EA8E9)
+            )
+        }
+        Spacer(modifier = Modifier.width(64.dp))
+        Image(
+            painter = painterResource(id = R.drawable.google),
+            contentDescription = "social login google",
             modifier = Modifier.size(16.dp)
         )
-        Text(
-            text = "Continue as Aris",
-            fontSize = 14.sp,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(horizontal = 8.dp),
-            color = Color(0xff4ea8e9)
-        )
+        TextButton(onClick = { /*TODO*/ }) {
+            Text(
+                text = "Google", fontSize = 14.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.Black
+            )
+        }
     }
 }
 
@@ -169,11 +184,11 @@ fun LoginDivider() {
                 .weight(1f)
         )
         Text(
-            text = "OR",
+            text = "Or access with:",
             modifier = Modifier.padding(horizontal = 18.dp),
             fontSize = 12.sp,
             fontWeight = FontWeight.Bold,
-            color = Color(0xffb5b5b5)
+            color = Color(0xFFB5B5B5)
         )
         HorizontalDivider(
             Modifier
@@ -191,8 +206,8 @@ fun LoginButton(loginEnable: Boolean) {
         enabled = loginEnable,
         modifier = Modifier.fillMaxWidth(),
         colors = ButtonDefaults.buttonColors(
-            containerColor = Color(0xff4ea8e9),
-            disabledContainerColor = Color(0xff78c8f9),
+            containerColor = Color(0xFF112B3C),
+            disabledContainerColor = Color(0xFF205375),
             contentColor = Color.White,
             disabledContentColor = Color.White
         )

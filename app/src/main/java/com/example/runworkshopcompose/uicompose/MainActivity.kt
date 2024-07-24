@@ -22,9 +22,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             RunWorkshopComposeTheme {
-//                navigationController = rememberNavController()
-//                ContentWrapper(navigationController)
-                LoginScreen()
+                navigationController = rememberNavController()
+                ContentWrapper(navigationController)
+
             }
         }
 
