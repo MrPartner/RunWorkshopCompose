@@ -5,7 +5,11 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+<<<<<<< HEAD
         <option name="gradleJvm" value="19" />
+=======
+        <option name="gradleJvm" value="jbr-17" />
+>>>>>>> a16e6e4 (enlazamos proyecto a github nuevamente)
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
