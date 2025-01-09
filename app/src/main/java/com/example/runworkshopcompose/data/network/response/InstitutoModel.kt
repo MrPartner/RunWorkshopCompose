@@ -13,4 +13,4 @@ data class InstitutoModel(
     @SerializedName("fecha") val fecha: String,
     @SerializedName("hora") val hora: String
 )
-//3
+

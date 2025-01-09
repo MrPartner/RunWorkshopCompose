@@ -6,7 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.runworkshopcompose.data.network.database.entities.InstitutoEntity
 
-//Las Dao recuperan los datos de la db a traves de las Entities
+
 @Dao
 interface InstitutoDao {
 
@@ -19,4 +19,4 @@ interface InstitutoDao {
     @Query("DELETE FROM institutos")
     suspend fun deleteAllInstitutos()
 }
-//2
+//2 Room Las Dao recuperan los datos de la db a traves de las Entities
