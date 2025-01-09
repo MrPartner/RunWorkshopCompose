@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.runworkshopcompose.domain.model.Instituto
 
-//Esta entidad se usa para Room
+
 @Entity(tableName = "institutos") //Este es el nombre de la tabla en la db
 data class InstitutoEntity(
     @PrimaryKey(autoGenerate = true)
@@ -30,4 +30,4 @@ fun Instituto.toDatabase() = InstitutoEntity(
     fecha = fecha,
     hora = hora
 )
-//1
+//1 Room Esta entidad se usa para Room

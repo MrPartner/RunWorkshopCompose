@@ -32,7 +32,7 @@ class InstitutoRepository @Inject constructor(
     }
 
 }
-//5
+//5 Room
 //Esta clase se encarga de gestionar si accedemos a network o a database
 
 

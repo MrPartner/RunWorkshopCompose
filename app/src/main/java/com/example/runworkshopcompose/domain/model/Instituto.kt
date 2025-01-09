@@ -19,3 +19,5 @@ fun InstitutoModel.toDomain() =
 
 fun InstitutoEntity.toDomain() =
     Instituto(instituto, direccion, audiencia, taller, descripcion, costo, fecha, hora)
+
+//6 Room Esta es la data class que usa dominio y ui
