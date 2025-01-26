@@ -27,6 +27,7 @@ import androidx.compose.material.icons.filled.ThumbUp
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -58,7 +59,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.runworkshopcompose.R
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(loginViewModel: LoginViewModel = hiltViewModel()) {
     Scaffold(modifier = Modifier.padding(8.dp)) { innerpadding ->
         Box(
             modifier = Modifier
@@ -66,9 +67,20 @@ fun LoginScreen() {
                 .padding(innerpadding)
 //                .background(Color(0xFFEFEFEF))
         ) {
-            Header(Modifier.align(Alignment.TopEnd))
-            Body(Modifier.align(Alignment.Center))
-            Footer(Modifier.align(Alignment.BottomCenter))
+            val isLoading:Boolean by loginViewModel.isLoading.collectAsStateWithLifecycle()
+
+            if (isLoading){
+                Box(modifier = Modifier
+                    .fillMaxSize()
+                    .align(Alignment.Center)){
+                    CircularProgressIndicator()
+                }
+            }else{
+                Header(Modifier.align(Alignment.TopEnd))
+                Body(Modifier.align(Alignment.Center))
+                Footer(Modifier.align(Alignment.BottomCenter))
+            }
+
         }
     }
 }
@@ -210,9 +222,9 @@ fun LoginDivider() {
 }
 
 @Composable
-fun LoginButton(loginEnable: Boolean) {
+fun LoginButton(loginEnable: Boolean, loginViewModel: LoginViewModel = hiltViewModel()) {
     Button(
-        onClick = {},
+        onClick = {loginViewModel.onLoginSelected()},
         enabled = loginEnable,
         modifier = Modifier.fillMaxWidth(),
         colors = ButtonDefaults.buttonColors(

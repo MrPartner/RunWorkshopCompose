@@ -2,6 +2,7 @@ package com.example.runworkshopcompose.core.network.di
 
 import com.example.runworkshopcompose.data.network.ConsultoraApiClient
 import com.example.runworkshopcompose.data.network.InstitutoApiClient
+import com.example.runworkshopcompose.data.network.LoginApiClient
 import com.example.runworkshopcompose.data.network.UniversidadApiClient
 import dagger.Module
 import dagger.Provides
@@ -43,5 +44,12 @@ object NetworkModule {
         return retrofit.create(UniversidadApiClient::class.java)
     }
 
+    @Singleton
+    @Provides
+    fun provideLoginApiClient(retrofit: Retrofit): LoginApiClient {
+        return retrofit.create(LoginApiClient::class.java)
+    }
+
+    //"http://run.mocky.io/"
 }
 
