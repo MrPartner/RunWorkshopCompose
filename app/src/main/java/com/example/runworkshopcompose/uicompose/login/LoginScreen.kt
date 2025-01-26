@@ -21,7 +21,10 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.ThumbUp
+import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.HorizontalDivider
@@ -50,6 +53,8 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.runworkshopcompose.R
 
 @Composable
@@ -80,22 +85,21 @@ fun Header(modifier: Modifier) {
 }
 
 @Composable
-fun Body(modifier: Modifier) {
-    var email by rememberSaveable { mutableStateOf("") }
-    var password by rememberSaveable { mutableStateOf("") }
-    var isLoginEnable by rememberSaveable { mutableStateOf(false) }
+fun Body(modifier: Modifier, loginViewModel: LoginViewModel = hiltViewModel()) {
+
+    val email: String by loginViewModel.email.collectAsStateWithLifecycle()
+    val password: String by loginViewModel.password.collectAsStateWithLifecycle()
+    val isLoginEnable: Boolean by loginViewModel.isLoginEnable.collectAsStateWithLifecycle()
 
     Column(modifier = modifier) {
         ImageLogo(Modifier.align(Alignment.CenterHorizontally))
         Spacer(modifier = Modifier.size(16.dp))
         Email(email) {
-            email = it
-            isLoginEnable = enableLogin(email, password)
+            loginViewModel.onLoginChanged(email = it, password = password)
         }
         Spacer(modifier = Modifier.size(4.dp))
         Password(password) {
-            password = it
-            isLoginEnable = enableLogin(email, password)
+            loginViewModel.onLoginChanged(email = email, password = it)
         }
         Spacer(modifier = Modifier.size(8.dp))
         ForgotPassword(Modifier.align(Alignment.End))
@@ -126,15 +130,21 @@ fun Footer(modifier: Modifier) {
 
 @Composable
 fun SignUp() {
-    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
         Text(text = "Don't have an account?", fontSize = 12.sp, color = Color(0xffb5b5b5))
-        Text(
-            text = "Sign up.",
-            Modifier.padding(horizontal = 8.dp),
-            fontSize = 12.sp,
-            fontWeight = FontWeight.Bold,
-            color = Color(0xff4ea8e9)
-        )
+        TextButton(onClick = { /*TODO*/ }) {
+            Text(
+                text = "Sign up.",
+                fontSize = 12.sp,
+                modifier = Modifier.padding(horizontal = 4.dp),
+                fontWeight = FontWeight.Bold,
+                color = Color(0xff4ea8e9)
+            )
+        }
     }
 }
 
@@ -216,10 +226,6 @@ fun LoginButton(loginEnable: Boolean) {
     }
 }
 
-fun enableLogin(email: String, password: String): Boolean =
-    Patterns.EMAIL_ADDRESS.matcher(email).matches() && password.length > 6
-
-
 @Composable
 fun ForgotPassword(modifier: Modifier) {
     Text(
@@ -256,9 +262,9 @@ fun Password(password: String, onTextChanged: (String) -> Unit) {
         ),
         trailingIcon = {
             val imagen = if (passwordVisibility) {
-                Icons.Filled.ThumbUp
+                Icons.Filled.Warning
             } else {
-                Icons.Filled.Check
+                Icons.Filled.Lock
             }
             IconButton(onClick = { passwordVisibility = !passwordVisibility }) {
                 Icon(imageVector = imagen, contentDescription = "show password")
@@ -310,9 +316,3 @@ fun Email(email: String, onTextChanged: (String) -> Unit) {
     )
 }
 
-@Composable
-@Preview(showBackground = true, showSystemUi = true)
-fun LoginTest2Preview() {
-    LoginScreen()
-
-}
