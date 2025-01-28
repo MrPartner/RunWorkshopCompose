@@ -1,0 +1,34 @@
+
+¬
+;
+android*http://schemas.android.com/apk/res/android-
+4
+app'http://schemas.android.com/apk/res-auto-3androidx.coordinatorlayout.widget.CoordinatorLayout"`
+*http://schemas.android.com/apk/res/androidlayout_widthmatch_parent"(ô„2:0ÿÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightmatch_parent"(õ„2:0ÿÿÿÿÿÿÿÿÿ"T
+*http://schemas.android.com/apk/res/androidfitsSystemWindowstrue"(İ„2:@*×
+Î/com.google.android.material.appbar.AppBarLayout"`
+*http://schemas.android.com/apk/res/androidlayout_widthmatch_parent"(ô„2:0ÿÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"(õ„2:0şÿÿÿÿÿÿÿÿ"T
+*http://schemas.android.com/apk/res/androidfitsSystemWindowstrue"(İ„2:@*ÿ
+ö2com.google.android.material.appbar.MaterialToolbar"`
+*http://schemas.android.com/apk/res/androidlayout_widthmatch_parent"(ô„2:0ÿÿÿÿÿÿÿÿÿ"}
+*http://schemas.android.com/apk/res/androidlayout_height?attr/actionBarSize"(õ„2"
+ †€Œøattr/actionBarSize0À€"_
+*http://schemas.android.com/apk/res/androidid@+id/toolbar"(Ğ„2
+óƒ ø
+id/toolbar0;**\
+Tinclude"Ilayout@layout/content_splash"2#
+!Ÿ€¬ølayout/content_splash0ÿÿ0*®
+¥Ecom.google.android.material.floatingactionbutton.FloatingActionButton"W
+*http://schemas.android.com/apk/res/androidlayout_marginBottom16dp"(ú„2:h "x
+*http://schemas.android.com/apk/res/androidlayout_marginEnd@dimen/fab_margin"(¶‡„2
+’˜ødimen/fab_margin0@"`
+*http://schemas.android.com/apk/res/androidlayout_widthwrap_content"(ô„2:0şÿÿÿÿÿÿÿÿ"a
+*http://schemas.android.com/apk/res/androidlayout_heightwrap_content"(õ„2:0şÿÿÿÿÿÿÿÿ"
+'http://schemas.android.com/apk/res-auto	srcCompat!@android:drawable/ic_dialog_email"(ˆˆŒø2+
+)©€  android:drawable/ic_dialog_email0"W
+*http://schemas.android.com/apk/res/androidid@+id/fab"(Ğ„2
+É øid/fab0"Z
+*http://schemas.android.com/apk/res/androidlayout_gravity
+bottom|end"(³„2:8Õ€€=-
