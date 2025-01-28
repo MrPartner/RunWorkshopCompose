@@ -21,10 +21,11 @@ object NetworkModule {
     @Provides
     fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://192.168.1.8:8080/")
+            .baseUrl("https://run.mocky.io/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+    //http://192.168.1.8:8080/
 
     @Singleton
     @Provides
@@ -50,6 +51,6 @@ object NetworkModule {
         return retrofit.create(LoginApiClient::class.java)
     }
 
-    //"http://run.mocky.io/"
 }
 
+// https://run.mocky.io/v3/a5b12465-f5d3-4b43-bd5f-0c39acb0433d
