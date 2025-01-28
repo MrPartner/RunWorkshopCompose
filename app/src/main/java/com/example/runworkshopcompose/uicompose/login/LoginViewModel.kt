@@ -1,5 +1,6 @@
 package com.example.runworkshopcompose.uicompose.login
 
+import android.util.Log
 import android.util.Patterns
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -44,6 +45,7 @@ class LoginViewModel @Inject constructor(
             val result = loginUseCase(email.value, password.value)
             if(result){
                 //Navegar a la siguiente pantalla
+                Log.i("LoginViewModel", "result OK")
             }
             _isLoading.value = false
         }
